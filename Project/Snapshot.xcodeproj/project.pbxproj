@@ -11,6 +11,8 @@
 		B7304D6F2CC01F23001980CB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7304D6E2CC01F23001980CB /* ContentView.swift */; };
 		B7304D712CC01F27001980CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7304D702CC01F27001980CB /* Assets.xcassets */; };
 		B7304D742CC01F27001980CB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7304D732CC01F27001980CB /* Preview Assets.xcassets */; };
+		B7304D7B2CC01F84001980CB /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7304D7A2CC01F84001980CB /* Camera.swift */; };
+		B7304D7D2CC04139001980CB /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7304D7C2CC04139001980CB /* DataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		B7304D6E2CC01F23001980CB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B7304D702CC01F27001980CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7304D732CC01F27001980CB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B7304D7A2CC01F84001980CB /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		B7304D7C2CC04139001980CB /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,8 @@
 				B7304D6E2CC01F23001980CB /* ContentView.swift */,
 				B7304D702CC01F27001980CB /* Assets.xcassets */,
 				B7304D722CC01F27001980CB /* Preview Content */,
+				B7304D7A2CC01F84001980CB /* Camera.swift */,
+				B7304D7C2CC04139001980CB /* DataModel.swift */,
 			);
 			path = Snapshot;
 			sourceTree = "<group>";
@@ -138,7 +144,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7304D6F2CC01F23001980CB /* ContentView.swift in Sources */,
+				B7304D7D2CC04139001980CB /* DataModel.swift in Sources */,
 				B7304D6D2CC01F23001980CB /* SnapshotApp.swift in Sources */,
+				B7304D7B2CC01F84001980CB /* Camera.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +283,7 @@
 				DEVELOPMENT_TEAM = RHBH6Q62PG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Necessary access to take photo";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,6 +313,7 @@
 				DEVELOPMENT_TEAM = RHBH6Q62PG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Necessary access to take photo";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
