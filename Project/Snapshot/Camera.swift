@@ -25,7 +25,7 @@ class Camera: NSObject {
     private var addToPhotoStream: ((AVCapturePhoto) -> Void)?
     
     private var allCaptureDevices: [AVCaptureDevice] {
-        AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInTrueDepthCamera, .builtInDualCamera, .builtInDualWideCamera, .builtInWideAngleCamera, .builtInUltraWideCamera], mediaType: .video, position: .unspecified).devices
+        AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: .video, position: .unspecified).devices
     }
     
     private var frontCaptureDevices: [AVCaptureDevice] {
@@ -79,6 +79,14 @@ class Camera: NSObject {
                 if !self.isPreviewPaused {
                     continuation.yield(ciImage)
                 }
+            }
+        }
+    }()
+    
+    lazy var photoStream: AsyncStream<AVCapturePhoto> = {
+        AsyncStream { continuation in
+            addToPhotoStream = { photo in
+                continuation.yield(photo)
             }
         }
     }()
@@ -153,8 +161,10 @@ class Camera: NSObject {
                 photoSettings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.hevc])
             }
             
-            let isFlashAvailable = self.deviceInput?.device.isFlashAvailable ?? false
-            photoSettings.flashMode = isFlashAvailable ? .auto : .off
+//            let isFlashAvailable = self.deviceInput?.device.isFlashAvailable ?? false
+//            photoSettings.flashMode = isFlashAvailable ? .auto : .off
+            photoSettings.flashMode = .off
+            
             if let previewPhotoPixelFormatType = photoSettings.availablePreviewPhotoPixelFormatTypes.first {
                 photoSettings.previewPhotoFormat = [kCVPixelBufferPixelFormatTypeKey as String: previewPhotoPixelFormatType]
             }

@@ -11,7 +11,7 @@ import SwiftUI
 struct SnapshotApp: App {
     var body: some Scene {
         WindowGroup {
-            NEWANOTHERWAY()
+            ContentView()
         }
     }
 }
